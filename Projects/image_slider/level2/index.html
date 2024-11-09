@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <!-- first section -->
+    <div class="page-header">
+        <img src="../assets/logo/wsa-logo.svg" alt="WSA Logo">
+        <h1 class="project-title">Image carousel</h1>
+    </div>
+
+    <!-- image slider  -->
+    <section class="carousel-wrapper">
+
+        <div class="carousel-slides-container">
+            <!-- previous button -->
+            <button class="prev-btn" onclick="changeSlide(-1)">
+                <img src="../assets/icons/arrow-prev.svg" alt="previous">
+            </button>
+
+            <!-- images -->
+            <img class=" carousel-slide" src="../assets//images/slide1.png" alt="slide-1">
+            <img class="carousel-slide" src="../assets/images/slide2.png" alt="slide-2">
+            <img class="carousel-slide" src="../assets/images/slide3.png" alt="slide-3">
+
+            <!-- next button -->
+            <button class="next-btn" onclick="changeSlide(1)">
+                <img src="../assets/icons/arrow-next.svg" alt="next">
+            </button>
+        </div>
+
+        <!-- dot -->
+        <div class="carousel-dots">
+            <span class="dot" onclick="currentSlide(0)"></span>
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+        </div>
+
+    </section>
+
+
+
+    <!-- third section -->
+    <div>
+        <p class="copyright-text">&copy; 2023 WSA. All Rights Reserved</p>
+    </div>
+
+    <!-- level 2 -->
+    <div id="imagePopup" class="popup"  >
+        <span class="close" onclick="closePopup()">&times;</span>
+        <div class="popup-content">
+            <img id="popup-image" alt="Enlarged Image" src="">
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+
+</html>

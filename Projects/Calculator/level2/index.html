@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>web calculator level 2</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <div class="page-container">
+    <!-- logo -->
+    <img src="./wsa-logo.svg" alt="wsa logo" />
+
+    <section class="calculator-section-container">
+      <h1>CALCULATOR</h1>
+
+      <!-- background circle -->
+      <div class="bg-circle">
+        <!-- main calculator -->
+        <div class="container">
+          <!-- display -->
+          <div class="display">
+            <input type="text" id="input" class="secondary-input" disabled />
+            <input type="text" id="screen" class="primary-input" disabled />
+          </div>
+
+          <!-- 1st row -->
+          <div class="row row-first">
+            <button class="btn btn-primary" onclick="backspc()">
+              <img src="./delete.svg" width="40px" height="40px" />
+            </button>
+            <button id="ce" class="btn-class btn-primary" onclick="CE()">CE</button>
+            <button class="btn btn-primary">AC</button>
+          </div>
+
+          <!-- second row -->
+          <div class="row">
+            <button class="btn">(</button>
+            <button class="btn">)</button>
+            <button class="btn">*</button>
+            <button class="btn">+/-</button>
+            <button class="btn">√</button>
+          </div>
+
+          <!-- 3d row -->
+          <div class="row">
+            <button class="btn">7</button>
+            <button class="btn">8</button>
+            <button class="btn">9</button>
+            <button class="btn">÷</button>
+            <button class="btn-class" onclick="calculatePercentage()">%</button>
+          </div>
+
+          <!-- 4th row -->
+          <div class="row">
+            <button class="btn">4</button>
+            <button class="btn">5</button>
+            <button class="btn">6</button>
+            <button class="btn">×</button>
+            <button class="btn-class" onclick="inverse()">1/x</button>
+          </div>
+
+          <!-- 5th row -->
+          <div class="row">
+            <button class="btn">1</button>
+            <button class="btn">2</button>
+            <button class="btn">3</button>
+            <button class="btn">+</button>
+            <button class="btn-class btn-primary btn-equal" onclick="getResult()">
+              (=)
+            </button>
+          </div>
+
+          <!-- 6th row -->
+          <div class="row">
+            <button class="btn btn-expanded">0</button>
+            <button class="btn">.</button>
+            <button class="btn">-</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <p class="copyright-text">&copy; 2023 WSA. All Rights Reserved.</p>
+  </div>
+  <script src="./script.js"></script>
+</body>
+
+</html>
