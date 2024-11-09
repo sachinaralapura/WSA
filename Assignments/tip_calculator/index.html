@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            box-sizing: border-box;
+            margin: 0px;
+            padding: 0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            justify-items: center;
+            gap: 10px;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        .container>h1 {
+            text-align: center;
+        }
+
+        input,
+        button {
+            width: 300px;
+            padding: 10px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1> Tip Calculator</h1>
+        <input type="text" name="" id="amount" placeholder="Enter amount"><br>
+        <input type="text" name="" id="percentage" placeholder="Tip Percentage"><br>
+        <button onclick="calculate()"> Calculate</button><br>
+        <span id="output">Total : </span>
+    </div>
+    <script src="./script.js"></script>
+</body>
+
+</html>
