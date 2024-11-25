@@ -1,0 +1,21 @@
+<svg width="82" height="82" viewBox="0 0 82 82" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="play button">
+<g id="Ellipse 14" filter="url(#filter0_d_251_4)">
+<circle cx="41" cy="37" r="32" fill="#CE036A"/>
+</g>
+<path id="Vector" d="M31 49H37.8571V25H31V49ZM44.7143 25V49H51.5714V25H44.7143Z" fill="white"/>
+</g>
+<defs>
+<filter id="filter0_d_251_4" x="0" y="0" width="82" height="82" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feMorphology radius="1" operator="dilate" in="SourceAlpha" result="effect1_dropShadow_251_4"/>
+<feOffset dy="4"/>
+<feGaussianBlur stdDeviation="4"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.08 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_251_4"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_251_4" result="shape"/>
+</filter>
+</defs>
+</svg>
