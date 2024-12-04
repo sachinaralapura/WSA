@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="shortcut icon" href="../assets/logo/wsalogo1.png" type="image/x-icon">
+
+    <title>Music Player</title>
+</head>
+
+<body>
+    <div class="music-player">
+        <section class="left-section">
+            <div class="wsa-logo-container">
+                <img src="../assets/logo/wsa-logo.svg" />
+            </div>
+            <div class="songs-list-container">
+                <h2>Track List</h2>
+                <div id="song-list">
+                    <div id="items-list-container">
+                        <div id="item-img"><img src="../assets/icons/outline.svg" /></div>
+                        <div id="item-track-data">
+                            <p>Title</p>
+                            <p>Artist</p>
+                        </div>
+                        <div id="item-track-duration">
+                            <p>duration</p>
+                            <p>Year</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="player-container">
+            <div class="thumbnail-container" id="thumbnail-container">
+                <img src="" alt="Thumbnail" id="thumbnail" />
+            </div>
+            <div class="track-details">
+                <p id="player-title">I’m Scared (LEO)</p>
+                <p id="player-description">Anirudh Ravichander</p>
+            </div>
+            <div class="controls">
+                <div class="track-progress">
+                    <input type="range" id="progress" min="0" max="100" value="0" step="1" style="padding: 0" />
+                    <div class="time" id="current-time">00:00</div>
+                    <div class="time" id="time-left">00:00</div>
+                </div>
+                <div class="btn-group">
+                    <button id="shuffle">
+                        <img id="shuffle-img" src="../assets/icons/shuffle-highlighted.svg" />
+                    </button>
+                    <button class="next-prev-btn" id="prev">
+                        <img src="../assets/icons/prev.svg" />
+                    </button>
+                    <button id="play-pause">
+                        <img src="../assets/icons/pause-button.svg" />
+                    </button>
+                    <button class="next-prev-btn" id="next">
+                        <img src="../assets/icons/next.svg" />
+                    </button>
+                    <button id="repeat"><img id="loop-img" src="../assets/icons/loop.svg" /></button>
+                </div>
+
+                <!-- <select id="speed">
+            <option value="1">1x</option>
+            <option value="1.25">1.25x</option>
+            <option value="1.5">1.5x</option>
+            <option value="2">2x</option>
+          </select> -->
+            </div>
+            <div class="player-bottom-controls">
+                <div class="volume-container">
+                    <img src="../assets/icons/volume-low.svg" />
+                    <input type="range" id="volume" min="0" max="1" step="0.1" value="1" class="volume-range" />
+                    <img src="../assets/icons/volume-high.svg" />
+                </div>
+                <div class="custom-dropdown-container" id="custom-dropdown">
+                    <div class="custom-dropdown-selected" id="selectedValue">
+                        <img src="../assets/icons/headphone.svg" />
+                        Playback Speed
+                        <img src="../assets/icons/arrow.svg" id="dropdown-arrow" />
+                    </div>
+                    <div class="custom-dropdown-items" id="dropdown-list-items">
+                        <div class="custom-dropdown-item" data-value="2">2x</div>
+                        <div class="custom-dropdown-item" data-value="1.5">1.5x</div>
+                        <div class="custom-dropdown-item" data-value="1.25">1.25x</div>
+                        <div class="custom-dropdown-item selected-speed" data-value="1">Normal</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div id="preview-modal" class="modal">
+        <div class="modal-content">
+
+            <div class="modal-image-container">
+                <span class="close" id="close-modal"><img src="./assets/icons/close.svg" /></span>
+                <img id="preview-image" src="" alt="Preview Image">
+                <p class="verfied-bedge" id="verified"><img src="./assets/icons/verified.svg" />Verified Artist</p>
+                <p id="preview-artist">Artist</p>
+            </div>
+            <div id="previewDetails">
+                <div class="preview-stats">
+                    <h1 id="follow-count"></h1>
+                    <p>follower</p>
+                    <h1 id="listner-count"></h1>
+                    <p>Monthly Listner</p>
+                </div>
+                <p id="preview-description"></p>
+            </div>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+
+</html>

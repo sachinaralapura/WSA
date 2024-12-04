@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 30px;
+            box-sizing: border-box;
+        }
+
+        button {
+            outline: none;
+            border: none;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .left-section {
+            background: #f3f3f3;
+            padding: 40px;
+            border-radius: 20px;
+            width: 30%;
+
+            display: flex;
+            flex-direction: column;
+        }
+
+        .player {
+            width: 70%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            border-radius: 20px;
+            background: #f3f3f3;
+        }
+
+        .image-container {
+            border-radius: 20px;
+            background: #dddcdc;
+            padding: 100px;
+        }
+
+        .song-details {
+            margin-top: 20px;
+            text-align: center;
+            color: #333;
+            font-weight: bolder;
+        }
+
+        .controls {
+            display: flex;
+            flex-direction: column;
+            width: fit-content;
+        }
+
+        .progress-bar {
+            width: 400px;
+        }
+
+        .btn-group {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <section class="left-section">
+            <div style="text-align: center;">
+                <img src="../assets/logo/wsa-logo.svg">
+            </div>
+            <h2>Track List</h2>
+            <div class="tracks">
+                <div class="track"><img src="../assets/icons/outline.svg" alt="">Track 1</div>
+                <div class="track"><img src="../assets/icons/outline.svg" alt="">Track 2</div>
+                <div class="track"><img src="../assets/icons/outline.svg" alt="">Track 3</div>
+                <div class="track"><img src="../assets/icons/outline.svg" alt="">Track 4</div>
+            </div>
+        </section>
+        <div class="player">
+            <div class="image-container">
+                <img src="../assets/icons/music-icon.svg" alt="">
+            </div>
+            <div class="song-details">
+                <p>Song Title</p>
+                <p>Song details</p>
+            </div>
+            <div class="controls">
+                <div class="progress-bar">
+                    <input type="range" id="progress" min=0 max=100 step=1>
+                    <div class="time" id="current-time">00:00</div>
+                    <div class="time" id="time-left">01:10</div>
+                </div>
+                <div class="btn-group">
+                    <button>
+                        <img src="../assets/icons/arrow-repeat.svg">
+                    </button>
+                    <button width="50px" height="50px">
+                        <img src="../assets/icons/pause-button.svg">
+                    </button>
+                    <button>
+                        <img src="../assets/icons/stop.svg">
+                    </button>
+                </div>
+                <div class="volume">
+                    <img src="../assets/icons/volume-low.svg">
+                    <input type="range" id="volume" min=0 max=100 step=1>
+                    <img src="../assets/icons/volume-high.svg">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
