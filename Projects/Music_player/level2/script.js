@@ -129,6 +129,9 @@ document.addEventListener("DOMContentLoaded", function () {
     // Navigate to previous track
     function prevSong() {
         currentSongIndex = currentSongIndex - 1;
+        if (currentSongIndex < 0) {
+            currentSongIndex = songs.length - 1;
+        }
         loadSong(currentSongIndex);
         audio.play();
     }
@@ -149,6 +152,9 @@ document.addEventListener("DOMContentLoaded", function () {
             audio.play();
         } else if (isBtnClicked) {
             currentSongIndex = currentSongIndex + 1;
+            if (currentSongIndex > songs.length - 1) {
+                currentSongIndex = 0;
+            }
             loadSong(currentSongIndex);
             audio.play();
         } else {
@@ -185,7 +191,8 @@ document.addEventListener("DOMContentLoaded", function () {
         audio.volume = volumeControl.value;
     }
 
-    function renderSongList() {
+    // IIFE renderList()
+    (function () {
         // Clear existing list
         songList.innerHTML = "";
 
@@ -193,12 +200,15 @@ document.addEventListener("DOMContentLoaded", function () {
         songs.forEach((song, index) => {
             // Create elements for each song
             const itemContainer = document.createElement("div");
+
             const itemImg = document.createElement("div");
             const imgElement = document.createElement("img");
             const thumbnailImg = document.createElement("img");
+
             const trackDataContainer = document.createElement("div");
             const trackTitle = document.createElement("p");
             const trackArtist = document.createElement("p");
+
             const trackDurationContainer = document.createElement("div");
             const trackDuration = document.createElement("p");
             const trackYear = document.createElement("p");
@@ -244,9 +254,7 @@ document.addEventListener("DOMContentLoaded", function () {
             songList.appendChild(itemContainer);
             updateCurrentSongHighlight(currentSongIndex);
         });
-    }
-
-    renderSongList();
+    })()
 
     // Update style of shuffle and repeat button
     function updateButtonState(button, isActive) {
@@ -299,6 +307,7 @@ document.addEventListener("DOMContentLoaded", function () {
             this.classList.add("selected-speed");
         });
     });
+
 
     // Modal javascript
     // Accessing Modal elements

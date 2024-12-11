@@ -1,12 +1,14 @@
 const input0 = document.getElementById("amount");
 const input1 = document.getElementById("percentage");
 const output = document.getElementById("output");
+
 function tipCalculator(amount, percentage) {
     if (percentage < 0 || percentage > 100)
         throw Error("Percentage not valid");
     let total = amount + (amount * (percentage / 100))
     return total;
 }
+
 
 function calculate() {
     try {

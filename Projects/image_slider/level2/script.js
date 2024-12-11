@@ -28,12 +28,14 @@ function currentSlide(n) {
 
 // -------------- level 2 -------------- 
 
+
 function resetInterval() {
     clearInterval(interval);
     interval = setInterval(() => {
         changeSlide(1);
     }, 2000);
 }
+
 
 function openPopup() {
     clearInterval(interval);

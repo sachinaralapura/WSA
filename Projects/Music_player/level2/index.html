@@ -5,13 +5,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
-    <link rel="shortcut icon" href="../assets/logo/wsalogo1.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../assets/logo/wsa-logo.svg" type="image/x-icon">
 
     <title>Music Player</title>
 </head>
 
 <body>
     <div class="music-player">
+        <!-- Left side track list -->
         <section class="left-section">
             <div class="wsa-logo-container">
                 <img src="../assets/logo/wsa-logo.svg" />
@@ -19,27 +20,18 @@
             <div class="songs-list-container">
                 <h2>Track List</h2>
                 <div id="song-list">
-                    <div id="items-list-container">
-                        <div id="item-img"><img src="../assets/icons/outline.svg" /></div>
-                        <div id="item-track-data">
-                            <p>Title</p>
-                            <p>Artist</p>
-                        </div>
-                        <div id="item-track-duration">
-                            <p>duration</p>
-                            <p>Year</p>
-                        </div>
-                    </div>
+
                 </div>
             </div>
         </section>
+        <!-- Player with controls -->
         <div class="player-container">
             <div class="thumbnail-container" id="thumbnail-container">
                 <img src="" alt="Thumbnail" id="thumbnail" />
             </div>
             <div class="track-details">
-                <p id="player-title">I’m Scared (LEO)</p>
-                <p id="player-description">Anirudh Ravichander</p>
+                <p id="player-title"></p>
+                <p id="player-description"></p>
             </div>
             <div class="controls">
                 <div class="track-progress">
@@ -48,27 +40,21 @@
                     <div class="time" id="time-left">00:00</div>
                 </div>
                 <div class="btn-group">
-                    <button id="shuffle">
+                    <button id="shuffle" style="background-color: #f3f3f3;">
                         <img id="shuffle-img" src="../assets/icons/shuffle-highlighted.svg" />
                     </button>
                     <button class="next-prev-btn" id="prev">
                         <img src="../assets/icons/prev.svg" />
                     </button>
-                    <button id="play-pause">
+                    <button id="play-pause" style="background-color: #f3f3f3;">
                         <img src="../assets/icons/pause-button.svg" />
                     </button>
                     <button class="next-prev-btn" id="next">
                         <img src="../assets/icons/next.svg" />
                     </button>
-                    <button id="repeat"><img id="loop-img" src="../assets/icons/loop.svg" /></button>
+                    <button id="repeat" style="background-color: #f3f3f3;"><img id="loop-img"
+                            src="../assets/icons/loop.svg" /></button>
                 </div>
-
-                <!-- <select id="speed">
-            <option value="1">1x</option>
-            <option value="1.25">1.25x</option>
-            <option value="1.5">1.5x</option>
-            <option value="2">2x</option>
-          </select> -->
             </div>
             <div class="player-bottom-controls">
                 <div class="volume-container">
@@ -98,9 +84,9 @@
         <div class="modal-content">
 
             <div class="modal-image-container">
-                <span class="close" id="close-modal"><img src="./assets/icons/close.svg" /></span>
+                <span class="close" id="close-modal"><img src="../assets/icons/close.svg" /></span>
                 <img id="preview-image" src="" alt="Preview Image">
-                <p class="verfied-bedge" id="verified"><img src="./assets/icons/verified.svg" />Verified Artist</p>
+                <p class="verfied-bedge" id="verified"><img src="../assets/icons/verified.svg" />Verified Artist</p>
                 <p id="preview-artist">Artist</p>
             </div>
             <div id="previewDetails">

@@ -4,126 +4,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 30px;
-            box-sizing: border-box;
-        }
-
-        button {
-            outline: none;
-            border: none;
-        }
-
-        .container {
-            display: flex;
-            justify-content: space-between;
-            gap: 20px;
-        }
-
-        .left-section {
-            background: #f3f3f3;
-            padding: 40px;
-            border-radius: 20px;
-            width: 30%;
-
-            display: flex;
-            flex-direction: column;
-        }
-
-        .player {
-            width: 70%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            border-radius: 20px;
-            background: #f3f3f3;
-        }
-
-        .image-container {
-            border-radius: 20px;
-            background: #dddcdc;
-            padding: 100px;
-        }
-
-        .song-details {
-            margin-top: 20px;
-            text-align: center;
-            color: #333;
-            font-weight: bolder;
-        }
-
-        .controls {
-            display: flex;
-            flex-direction: column;
-            width: fit-content;
-        }
-
-        .progress-bar {
-            width: 400px;
-        }
-
-        .btn-group {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-    </style>
-
+    <title>Music Player</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="shortcut icon" href="../assets/logo/wsalogo1.png" type="image/x-icon">
 </head>
 
 <body>
-    <div class="container">
+    <div class="music-player">
         <section class="left-section">
-            <div style="text-align: center;">
+            <div class="wsa-logo-container">
                 <img src="../assets/logo/wsa-logo.svg">
             </div>
-            <h2>Track List</h2>
-            <div class="tracks">
-                <div class="track"><img src="../assets/icons/outline.svg" alt="">Track 1</div>
-                <div class="track"><img src="../assets/icons/outline.svg" alt="">Track 2</div>
-                <div class="track"><img src="../assets/icons/outline.svg" alt="">Track 3</div>
-                <div class="track"><img src="../assets/icons/outline.svg" alt="">Track 4</div>
+            <div class="songs-list-container">
+                <h2>Track List</h2>
+                <div id="song-list">
+                </div>
             </div>
         </section>
-        <div class="player">
-            <div class="image-container">
-                <img src="../assets/icons/music-icon.svg" alt="">
+        <!-- Player with controls -->
+        <div class="player-container">
+            <div class="thumbnail-container">
+                <img src="../assets/icons/music-icon.svg" alt="Thumbnail" id="thumbnail">
             </div>
-            <div class="song-details">
-                <p>Song Title</p>
-                <p>Song details</p>
+            <div class="track-details">
+                <p id="player-title"></p>
+                <p id="player-description">Rockot</p>
             </div>
             <div class="controls">
-                <div class="progress-bar">
-                    <input type="range" id="progress" min=0 max=100 step=1>
+                <div class="track-progress">
+                    <input type="range" id="progress" min="0" max="100" value="0" step="1" style="padding: 0">
                     <div class="time" id="current-time">00:00</div>
-                    <div class="time" id="time-left">01:10</div>
+                    <div class="time" id="time-left">00:00</div>
                 </div>
                 <div class="btn-group">
-                    <button>
+                    <button class="control-btn" id="restart">
                         <img src="../assets/icons/arrow-repeat.svg">
                     </button>
-                    <button width="50px" height="50px">
+                    <button id="play-pause">
                         <img src="../assets/icons/pause-button.svg">
                     </button>
-                    <button>
+                    <button class="control-btn" id="stop">
                         <img src="../assets/icons/stop.svg">
                     </button>
                 </div>
-                <div class="volume">
+                <div class="volume-container">
                     <img src="../assets/icons/volume-low.svg">
-                    <input type="range" id="volume" min=0 max=100 step=1>
+                    <input type="range" id="volume" min="0" max="1" step="0.1" value="1" class="volume-range">
                     <img src="../assets/icons/volume-high.svg">
                 </div>
             </div>
         </div>
     </div>
+    <script src="./script.js"></script>
+
+
 </body>
 
 </html>
