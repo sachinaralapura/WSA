@@ -18,19 +18,26 @@ searchBtn.addEventListener("click", async () => {
         await renderBorders(data.borders);
     }
     catch (err) {
-        container.innerHTML = `<h3>Country not found</h3>`
+        console.log(err);
+        container.innerHTML = `<h3>${err.message}</h3>`
     }
 });
 
 
 async function getCountryData(countryName) {
     let response = await fetch(`https://restcountries.com/v3.1/name/${countryName}`)
+    if (!response.ok) {
+        throw new Error("Country not found");
+    }
     let data = await response.json();
     return data;
 }
 
 async function getCountryCodeData(countryCode) {
     let response = await fetch(`https://restcountries.com/v3.1/alpha/${countryCode}`);
+    if (!response.ok) {
+        throw new Error("Country not found");
+    }
     let data = await response.json();
     return data;
 }
