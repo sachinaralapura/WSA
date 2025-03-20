@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Fredoka:wght@300..700&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin: 10px;
+}
+
+/* ----------Ingridient search---------- */
+
+.search-container {
+  text-align: center;
+  font-weight: bold;
+  width: 50%;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  padding-bottom: 30px;
+}
+
+.title {
+  font-family: "Amatic SC", cursive;
+  font-size: 2rem;
+}
+
+.input {
+  font-family: " Raleway", sans-serif;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: none;
+  width: 70%;
+  margin: 10px;
+  padding: 10px 10px;
+  background-color: white;
+}
+
+.button {
+  font-family: "Raleway", sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: white;
+
+  border-radius: 5px;
+  border: none;
+  margin: 10px;
+  padding: 10px 5px;
+}
+
+.add-btn {
+  width: 20%;
+}
+
+.add-btn:hover,
+.search-btn:hover {
+  cursor: pointer;
+  background-color: green;
+  color: white;
+  transition: all 0.2s ease-in-out;
+}
+
+.search-btn {
+  width: 90%;
+  margin: 10px 10px;
+}
+
+.ingredients {
+  font-family: "fredoka", sans-serif;
+  font-size: small;
+  font-weight: lighter;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: start;
+  gap: 10px;
+  margin-left: 10px;
+  width: 90%;
+}
+
+.ingredients > span {
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.rm-ing {
+  color: red;
+  margin: 0px 5px;
+  cursor: pointer;
+  padding: 0px 5px;
+}
+
+/* --------------- Recipes----------------------- */
+
+.recipes-container {
+  text-align: center;
+  font-weight: bold;
+  width: 50%;
+}
+
+/* ---------- recipes card ----------  */
+
+.recipe-card-container {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f1f1f1;
+}

@@ -1,0 +1,285 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700&family=Inter:wght@400;500;600&family=Poppins:wght@400;700&display=swap");
+
+body {
+  box-sizing: border-box;
+  font-family: "Poppins";
+  /* caret-color: transparent; */
+}
+
+p {
+  margin: 0px;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+.app {
+  background: url("../images/background.png");
+  height: auto;
+  min-height: 100vh;
+  background-size: cover;
+  /* width: fit-content; */
+  min-width: 100%;
+}
+
+.header {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 92px;
+  padding: 0px 16px;
+}
+
+.header-text {
+  font-family: "Poppins";
+  font-weight: 700;
+  font-size: 40px;
+}
+
+.header-blue {
+  color: #6b66d8;
+}
+
+.card-container {
+  border-radius: 48px;
+  padding: 22px 46px;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: white;
+  align-self: stretch;
+}
+
+.home-main-div {
+  height: auto;
+  min-height: calc(100vh - 100px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  /* overflow-y: scroll; */
+  padding: 12px 0px;
+}
+
+.default-home-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 24px;
+  width: 100%;
+}
+
+.default-card-city {
+  display: flex;
+  align-items: center;
+  column-gap: 12px;
+}
+
+.city-name {
+  color: #ffffff;
+  font-family: "Poppins";
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.date-today {
+  font-weight: 400;
+  font-size: 18px;
+  font-family: "Poppins";
+}
+
+.temp-container {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.thermometer-img {
+  margin-bottom: 24px;
+  margin-right: 4px;
+}
+
+.weather-info-subtitle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 6px;
+  width: 45%;
+  min-width: 45%;
+  white-space: nowrap;
+}
+
+.weather-params-label {
+  margin-left: 4px;
+}
+
+.search-card {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.search-city-container {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.28);
+  stroke-width: 1px;
+  stroke: rgba(255, 255, 255, 0.28);
+  height: 50px;
+  border-radius: 10px;
+  width: 290px;
+  margin-top: 50px;
+}
+
+.city-results {
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.search-city-suggestions {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.28);
+  stroke-width: 1px;
+  stroke: rgba(255, 255, 255, 0.28);
+  border-radius: 10px;
+  border-top-right-radius: 0px;
+  border-top-left-radius: 0px;
+  width: 290px;
+  box-sizing: border-box;
+}
+
+.suggested-label {
+  padding: 8px 24px;
+  cursor: pointer;
+}
+
+.suggested-label:hover {
+  background: rgba(255, 255, 255, 0.23);
+}
+
+.search-icon {
+  position: absolute;
+  top: 5px;
+  left: 12px;
+}
+
+.city-input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  position: absolute;
+  left: 60px;
+  height: 100%;
+}
+
+.city-input {
+  color: white;
+  font-size: 24px;
+}
+
+.city-input::placeholder {
+  color: white;
+  font-size: 24px;
+}
+
+/* Search result screen style */
+.search-result-container-div {
+  padding: 64px 53px;
+  /* width: fit-content; */
+  min-width: 100%;
+  box-sizing: border-box;
+  /* text-align: center; */
+}
+
+.forecast-title {
+  color: #fff;
+  text-align: center;
+  font-family: "Poppins";
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.text-blue {
+  color: #99daff;
+  font-family: "Poppins";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.daily-forecast-section {
+  overflow: auto;
+  padding-bottom: 16px;
+}
+
+.daily-forecast-section::-webkit-scrollbar {
+  width: 4px;
+}
+
+/* Track */
+.daily-forecast-section::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+.daily-forecast-section::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 16px;
+}
+
+/* Handle on hover */
+.daily-forecast-section::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.day-forecast-container {
+  text-align: center;
+  width: 100px;
+}
+
+.label-18 {
+  color: #fff;
+  font-family: "Poppins";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.temp-range {
+  white-space: nowrap;
+}
+
+.copyright-text {
+  color: #fff;
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+  padding-bottom: 20px;
+}
