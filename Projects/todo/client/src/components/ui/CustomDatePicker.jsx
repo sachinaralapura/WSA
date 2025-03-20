@@ -18,6 +18,10 @@ export default function CustomDatePicker({
         onChange={onDateChange}
         isClearable={isClear}
         customInput={<CustomInput />}
+        showMonthDropdown
+        showYearDropdown
+        yearDropdownItemNumber={15}
+        scrollableYearDropdown
       />
     </div>
   );
