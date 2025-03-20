@@ -101,13 +101,14 @@ export default function ViewTask({
           </div>
         </div>
       </Modal>
-
-      <DeleteTask
-        task={activeTask}
-        isOpen={showDeleteTaskPopup}
-        onClose={closeDeleteTaskPopup}
-        fetchAllTask={fetchAllTask}
-      />
+      {showDeleteTaskPopup && (
+        <DeleteTask
+          task={activeTask}
+          isOpen={showDeleteTaskPopup}
+          onClose={closeDeleteTaskPopup}
+          fetchAllTask={fetchAllTask}
+        />
+      )}
     </div>
   );
 }

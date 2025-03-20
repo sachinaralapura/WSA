@@ -12,7 +12,7 @@ export default function CreateTask({ onCreateTask, onCancel }) {
   const [loading, setLoading] = useState(false);
 
   const handleResponse = useCallback(
-    (responseData) => {
+    function (responseData) {
       if (responseData.success) {
         onCreateTask();
       }

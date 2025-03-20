@@ -24,6 +24,8 @@ async function fetchTaskAPI(handleResponse, handleError) {
       throw new Error(errorMessage);
     }
 
+    console.log(jsonData);
+
     //pass the fetched data to the handle Response function for further processing
     handleResponse(jsonData);
   } catch (error) {
@@ -52,7 +54,6 @@ async function createTaskApi(values, handleResponse, handleError, setLoading) {
       const errorMessage = data.message || "Unknown error occured";
       throw new Error(errorMessage);
     }
-
     handleResponse(data);
   } catch (error) {
     const errorMessage =
@@ -79,6 +80,9 @@ async function updateTaskApi(
       description: values.taskDescription,
       due_date: values.taskDueDate?.toISOString(),
     });
+
+    console.log(requestBody);
+    
     const response = await fetch(url, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },

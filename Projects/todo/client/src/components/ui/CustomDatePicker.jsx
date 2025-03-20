@@ -20,8 +20,8 @@ export default function CustomDatePicker({
         customInput={<CustomInput />}
         showMonthDropdown
         showYearDropdown
-        yearDropdownItemNumber={15}
         scrollableYearDropdown
+        dropdownMode="select"
       />
     </div>
   );
