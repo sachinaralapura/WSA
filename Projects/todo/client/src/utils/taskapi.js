@@ -11,7 +11,10 @@ async function fetchTaskAPI(handleResponse, handleError) {
     const url = `${BASEURL}${endpoint}`;
 
     //send a GET request to the constructed URL
-    const response = await fetch(url);
+    const response = await fetch(url, {
+      method: "GET",
+      credentials: "include"
+    });
 
     //extract json from the response
     const jsonData = await response.json();
@@ -34,7 +37,7 @@ async function fetchTaskAPI(handleResponse, handleError) {
 }
 
 async function createTaskApi(values, handleResponse, handleError, setLoading) {
-  const endPoint = `/task`;
+  const endPoint = `/tasks`;
   const url = `${BASEURL}${endPoint}`;
   setLoading(true);
   try {
@@ -47,6 +50,7 @@ async function createTaskApi(values, handleResponse, handleError, setLoading) {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: requestBody,
+      credentials: "include"
     });
 
     const data = await response.json();
@@ -71,7 +75,7 @@ async function updateTaskApi(
   handleError,
   setLoading
 ) {
-  const endPoint = `/task/${taskId}`;
+  const endPoint = `/tasks/${taskId}`;
   const url = `${BASEURL}${endPoint}`;
   setLoading(true);
   try {
@@ -82,11 +86,12 @@ async function updateTaskApi(
     });
 
     console.log(requestBody);
-    
+
     const response = await fetch(url, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: requestBody,
+      credentials: "include"
     });
 
     const data = await response.json();
@@ -106,12 +111,14 @@ async function updateTaskApi(
 }
 
 async function deleteTaskApi(taskId, handleResponse, handleError, setLoading) {
-  const endPoint = `/task/${taskId}`;
+  const endPoint = `/tasks/${taskId}`;
   const url = `${BASEURL}${endPoint}`;
   setLoading(true);
   try {
     const response = await fetch(url, {
       method: "DELETE",
+      headers: { "Content-Type": "application/json" },
+      credentials: "include"
     });
 
     const data = await response.json();

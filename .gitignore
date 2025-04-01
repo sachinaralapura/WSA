@@ -13,3 +13,6 @@ drive*
 zextra
 react
 Projects/weather_level2
+keys
+*.zip
+.env

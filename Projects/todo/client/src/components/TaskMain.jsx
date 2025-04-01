@@ -28,7 +28,7 @@ export default function TaskMain() {
 
   const handleResponse = useCallback(
     function (responseData) {
-      const extractedTasks = responseData.tasks;
+      const extractedTasks = responseData.data;
       setTasks(extractedTasks);
       if (extractedTasks.length) {
         showScreen(TASK_LIST_SCREEN);
@@ -41,6 +41,7 @@ export default function TaskMain() {
 
   const handleError = function (errorMessage) {
     alert(errorMessage);
+    showScreen(TASK_LIST_SCREEN)
     console.error(errorMessage);
   };
 
