@@ -16,3 +16,5 @@ Projects/weather_level2
 keys
 *.zip
 .env
+node_modules
+node-modules
