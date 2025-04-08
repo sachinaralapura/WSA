@@ -42,7 +42,7 @@ export const getLabels = async (req, res) => {
         if (!labels.length) {
             return res.status(400).json({ success: false, message: "No labels found" })
         }
-        return res.status(200).json({ success: true, message: "successful", labels })
+        return res.status(200).json({ success: true, message: "successful", data : labels })
     } catch (error) {
         console.error("Error updating task:", error);
         res.status(500).json({ message: "Internal server error", error: error.message });
@@ -124,7 +124,7 @@ export const updateLabels = async (req, res) => {
         res.status(200).json({
             success: true,
             message: "task labels updated successfully",
-            updatedTask,
+            task : updatedTask
         });
     } catch (error) {
         console.error("Error updating task:", error);
@@ -155,7 +155,7 @@ export const updateStatus = async (req, res) => {
         task.status = status
         const updatedTask = await task.save()
 
-        return res.status(200).json({ success: true, message: "Status updated", updatedTask })
+        return res.status(200).json({ success: true, message: "Status updated", task : updatedTask })
 
     } catch (err) {
         console.error(err.message)

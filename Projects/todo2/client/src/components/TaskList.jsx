@@ -1,8 +1,9 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useMemo, useState } from "react";
 import { folder } from "../assets/asset.js";
 import TaskTile from "./TaskTile";
 import TaskListSideBar from "./TaskListSideBar.jsx";
 import clsx from "clsx";
+import SearchTask from "./SearchTask.jsx";
 export default function TaskList({
   tasks,
   setTasks,
@@ -15,14 +16,20 @@ export default function TaskList({
   boardView,
   setBoardView,
 }) {
-  const [searchQuery, setSearchQuery] = useState();
-
+  const [searchQuery, setSearchQuery] = useState("");
+  const [filteredTask, setFilteredTask] = useState([]);
   const handleViewTask = useCallback(
     function (taskId) {
       setActiveTaskId(taskId);
       showViewTaskScreen();
     },
     [setActiveTaskId, showViewTaskScreen]
+  );
+
+  // check if user has searched anything or not
+  const showSearchResults = useMemo(
+    () => Boolean(searchQuery.trim().length),
+    [searchQuery]
   );
   return (
     <div className="task-list-screen content-section">
@@ -42,7 +49,17 @@ export default function TaskList({
         {/* Header with search and add task button */}
         <div className="task-list-right-header">
           {/* search bar component  */}
-          <button onClick={showCreateTaskScreen}>
+          <SearchTask
+            placeholder="search title and description"
+            tasks={tasks}
+            setFilteredTask={setFilteredTask}
+            searchQuery={searchQuery}
+            setSearchQuery={setSearchQuery}
+          />
+          <button
+            onClick={showCreateTaskScreen}
+            className="add-task-btn cursor-pointer"
+          >
             <img src={folder} alt="Add task Icon" />
             Add New Task
           </button>
@@ -51,9 +68,9 @@ export default function TaskList({
         <div
           className={clsx("task-list-right-section", boardView && "board-view")}
         >
-          {tasks.map((task) => (
+          {(showSearchResults ? filteredTask : tasks).map((task) => (
             <TaskTile
-              key={`${task._id}-${"task-title"}`}
+              key={`${task._id}-${showSearchResults ? "result-tile" : "task-title"}`}
               task={task}
               onClick={() => handleViewTask(task._id)}
               fetchAllTask={fetchAllTask}

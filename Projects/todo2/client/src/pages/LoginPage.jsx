@@ -18,12 +18,12 @@ const LoginPage = ({ onLogin }) => {
     console.log(data);
     onLogin();
     navigate("/tasks");
-  };
+  }
 
   function handleError(error) {
     setError(error?.message);
     return;
-  };
+  }
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -35,7 +35,7 @@ const LoginPage = ({ onLogin }) => {
     } finally {
       setIsLoading(false);
     }
-  };
+  }
 
   // const handleSuccess = async (credentialResponse) => {
   //   try {
@@ -73,6 +73,7 @@ const LoginPage = ({ onLogin }) => {
               <FaEnvelope className="form-icon" /> Email
             </label>
             <input
+              className="auth-input"
               type="email"
               id="email"
               value={email}
@@ -87,6 +88,7 @@ const LoginPage = ({ onLogin }) => {
               <FaLock className="form-icon" /> Password
             </label>
             <input
+              className="auth-input"
               type="password"
               id="password"
               value={password}

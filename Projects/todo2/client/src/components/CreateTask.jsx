@@ -66,7 +66,7 @@ export default function CreateTask({ onCreateTask, onCancel }) {
           name={"new-task-title"}
           label={"Title"}
           type={"text"}
-          inputImg={TitleImg}
+          inputImg={titlePlaceholderImg}
           value={title}
           onChange={(e) => {
             setTitle(e.target.value);

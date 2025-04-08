@@ -79,6 +79,7 @@ const RegisterPage = ({ onRegister }) => {
               <FaUser className="form-icon" /> Full Name
             </label>
             <input
+              className="auth-input"
               type="text"
               id="name"
               value={name}
@@ -93,6 +94,7 @@ const RegisterPage = ({ onRegister }) => {
               <FaEnvelope className="form-icon" /> Email
             </label>
             <input
+              className="auth-input"
               type="email"
               id="email"
               value={email}
@@ -107,6 +109,7 @@ const RegisterPage = ({ onRegister }) => {
               <FaLock className="form-icon" /> Password
             </label>
             <input
+              className="auth-input"
               type="password"
               id="password"
               value={password}

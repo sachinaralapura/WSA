@@ -62,7 +62,7 @@ export default function TaskMain() {
   const changeTaskStatus = useCallback(function (id, status) {
     setTasks((prev) => {
       return prev.map((task) => {
-        if (task.id === id) {
+        if (task._id === id) {
           return { ...task, status: status };
         }
         return task;
@@ -79,7 +79,8 @@ export default function TaskMain() {
           <NoTask onCreateTask={() => showScreen(CREATE_TASK_SCREEN)} />
         )}
 
-        {currentComponent === TASK_LIST_SCREEN && (
+        {(currentComponent === TASK_LIST_SCREEN ||
+          currentComponent === VIEW_TASK_SCREEN) && (
           <TaskList
             tasks={tasks}
             setTasks={setTasks}
@@ -101,13 +102,14 @@ export default function TaskMain() {
           />
         )}
 
-        {/* {currentComponent === VIEW_TASK_SCREEN && (
+        {currentComponent === VIEW_TASK_SCREEN && (
           <ViewTask
             activeTask={activeTask}
             fetchAllTask={fetchAllTask}
             showEditTaskScreen={() => showScreen(EDIT_TASK_SCREEN)}
-            setActiveTask={setActiveTask}
+            setActiveTaskId={setActiveTaskId}
             onCancel={() => showScreen(TASK_LIST_SCREEN)}
+            changeTaskStatus={changeTaskStatus}
           />
         )}
 
@@ -117,7 +119,7 @@ export default function TaskMain() {
             fetchAllTask={fetchAllTask}
             onCancel={() => showScreen(TASK_LIST_SCREEN)}
           />
-        )} */}
+        )}
       </div>
     </>
   );

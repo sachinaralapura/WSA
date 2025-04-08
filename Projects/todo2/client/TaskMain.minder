@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<minder version="1.16.2" parent-etag="1870417569" etag="2776112438">
+  <theme name="dark" label="Dark" index="-1"/>
+  <styles>
+    <style level="0" isset="false" branchmargin="100" branchradius="25" linktype="straight" linkwidth="4" linkarrow="false" linkdash="solid" nodeborder="rounded" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="10" nodepadding="10" nodefont="Sans 11" nodemarkup="true" connectiondash="dotted" connectionlwidth="2" connectionarrow="fromto" connectionpadding="3" connectionfont="Sans 10" connectiontwidth="100" calloutfont="Sans 12" calloutpadding="5" calloutptrwidth="20" calloutptrlength="20"/>
+    <style level="1" isset="false" branchmargin="100" branchradius="25" linktype="straight" linkwidth="4" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="8" nodepadding="6" nodefont="Sans 11" nodemarkup="true" connectiondash="dotted" connectionlwidth="2" connectionarrow="fromto" connectionpadding="3" connectionfont="Sans 10" connectiontwidth="100" calloutfont="Sans 12" calloutpadding="5" calloutptrwidth="20" calloutptrlength="20"/>
+    <style level="2" isset="false" branchmargin="100" branchradius="25" linktype="straight" linkwidth="4" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="8" nodepadding="6" nodefont="Sans 11" nodemarkup="true" connectiondash="dotted" connectionlwidth="2" connectionarrow="fromto" connectionpadding="3" connectionfont="Sans 10" connectiontwidth="100" calloutfont="Sans 12" calloutpadding="5" calloutptrwidth="20" calloutptrlength="20"/>
+    <style level="3" isset="false" branchmargin="100" branchradius="25" linktype="straight" linkwidth="4" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="8" nodepadding="6" nodefont="Sans 11" nodemarkup="true" connectiondash="dotted" connectionlwidth="2" connectionarrow="fromto" connectionpadding="3" connectionfont="Sans 10" connectiontwidth="100" calloutfont="Sans 12" calloutpadding="5" calloutptrwidth="20" calloutptrlength="20"/>
+    <style level="4" isset="false" branchmargin="100" branchradius="25" linktype="straight" linkwidth="4" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="8" nodepadding="6" nodefont="Sans 11" nodemarkup="true" connectiondash="dotted" connectionlwidth="2" connectionarrow="fromto" connectionpadding="3" connectionfont="Sans 10" connectiontwidth="100" calloutfont="Sans 12" calloutpadding="5" calloutptrwidth="20" calloutptrlength="20"/>
+    <style level="5" isset="false" branchmargin="100" branchradius="25" linktype="straight" linkwidth="4" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="8" nodepadding="6" nodefont="Sans 11" nodemarkup="true" connectiondash="dotted" connectionlwidth="2" connectionarrow="fromto" connectionpadding="3" connectionfont="Sans 10" connectiontwidth="100" calloutfont="Sans 12" calloutpadding="5" calloutptrwidth="20" calloutptrlength="20"/>
+    <style level="6" isset="false" branchmargin="100" branchradius="25" linktype="straight" linkwidth="4" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="8" nodepadding="6" nodefont="Sans 11" nodemarkup="true" connectiondash="dotted" connectionlwidth="2" connectionarrow="fromto" connectionpadding="3" connectionfont="Sans 10" connectiontwidth="100" calloutfont="Sans 12" calloutpadding="5" calloutptrwidth="20" calloutptrlength="20"/>
+    <style level="7" isset="false" branchmargin="100" branchradius="25" linktype="straight" linkwidth="4" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="8" nodepadding="6" nodefont="Sans 11" nodemarkup="true" connectiondash="dotted" connectionlwidth="2" connectionarrow="fromto" connectionpadding="3" connectionfont="Sans 10" connectiontwidth="100" calloutfont="Sans 12" calloutpadding="5" calloutptrwidth="20" calloutptrlength="20"/>
+    <style level="8" isset="false" branchmargin="100" branchradius="25" linktype="straight" linkwidth="4" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="8" nodepadding="6" nodefont="Sans 11" nodemarkup="true" connectiondash="dotted" connectionlwidth="2" connectionarrow="fromto" connectionpadding="3" connectionfont="Sans 10" connectiontwidth="100" calloutfont="Sans 12" calloutpadding="5" calloutptrwidth="20" calloutptrlength="20"/>
+    <style level="9" isset="false" branchmargin="100" branchradius="25" linktype="straight" linkwidth="4" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="8" nodepadding="6" nodefont="Sans 11" nodemarkup="true" connectiondash="dotted" connectionlwidth="2" connectionarrow="fromto" connectionpadding="3" connectionfont="Sans 10" connectiontwidth="100" calloutfont="Sans 12" calloutpadding="5" calloutptrwidth="20" calloutptrlength="20"/>
+    <style level="10" isset="false" branchmargin="100" branchradius="25" linktype="straight" linkwidth="4" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="8" nodepadding="6" nodefont="Sans 11" nodemarkup="true" connectiondash="dotted" connectionlwidth="2" connectionarrow="fromto" connectionpadding="3" connectionfont="Sans 10" connectiontwidth="100" calloutfont="Sans 12" calloutpadding="5" calloutptrwidth="20" calloutptrlength="20"/>
+  </styles>
+  <images/>
+  <nodes>
+    <node id="0" posx="598.7890625" posy="343.55078125" width="112" height="65" side="top" fold="false" treesize="912" summarized="false" layout="Downwards" group="false">
+      <style branchmargin="149" branchradius="25" linktype="rounded" linkwidth="2" linkarrow="true" linkdash="solid" nodeborder="rounded" nodewidth="500" nodeborderwidth="2" nodefill="true" nodemargin="12" nodepadding="12" nodefont="Ubuntu Mono 11" nodemarkup="true"/>
+      <nodename maxwidth="500">
+        <text data="TaskMain"/>
+      </nodename>
+      <nodenote></nodenote>
+      <nodes>
+        <node id="4" posx="374.7890625" posy="557.55078125" width="112" height="65" side="bottom" fold="false" treesize="464" color="#f37329" colorroot="false" summarized="false" layout="Downwards" group="false">
+          <style branchmargin="149" branchradius="25" linktype="rounded" linkwidth="2" linkarrow="true" linkdash="solid" nodeborder="rounded" nodewidth="355" nodeborderwidth="2" nodefill="true" nodemargin="12" nodepadding="12" nodefont="Ubuntu Mono 11" nodemarkup="true"/>
+          <nodename maxwidth="317.203125">
+            <text data="TaskList"/>
+          </nodename>
+          <nodenote></nodenote>
+          <nodes>
+            <node id="8" posx="226.7890625" posy="771.55078125" width="168" height="65" side="bottom" fold="false" treesize="224" color="#f37329" colorroot="false" summarized="false" layout="Downwards" group="false">
+              <style branchmargin="149" branchradius="25" linktype="rounded" linkwidth="2" linkarrow="true" linkdash="solid" nodeborder="rounded" nodewidth="500" nodeborderwidth="2" nodefill="true" nodemargin="12" nodepadding="12" nodefont="Ubuntu Mono 11" nodemarkup="true"/>
+              <nodename maxwidth="500">
+                <text data="TaskListSideBar"/>
+              </nodename>
+              <nodenote></nodenote>
+              <nodes>
+                <node id="9" posx="198.7890625" posy="985.55078125" width="112" height="65" side="bottom" fold="false" treesize="112" color="#f37329" colorroot="false" summarized="false" layout="Downwards" group="false">
+                  <style branchmargin="149" branchradius="25" linktype="rounded" linkwidth="2" linkarrow="true" linkdash="solid" nodeborder="rounded" nodewidth="500" nodeborderwidth="2" nodefill="true" nodemargin="12" nodepadding="12" nodefont="Ubuntu Mono 11" nodemarkup="true"/>
+                  <nodename maxwidth="500">
+                    <text data="CheckBox"/>
+                  </nodename>
+                  <nodenote></nodenote>
+                </node>
+                <node id="10" posx="310.7890625" posy="985.55078125" width="112" height="65" side="bottom" fold="false" treesize="112" color="#f37329" colorroot="false" summarized="false" layout="Downwards" group="false">
+                  <style branchmargin="149" branchradius="25" linktype="rounded" linkwidth="2" linkarrow="true" linkdash="solid" nodeborder="rounded" nodewidth="500" nodeborderwidth="2" nodefill="true" nodemargin="12" nodepadding="12" nodefont="Ubuntu Mono 11" nodemarkup="true"/>
+                  <nodename maxwidth="500">
+                    <text data="DropDown"/>
+                  </nodename>
+                  <nodenote></nodenote>
+                </node>
+              </nodes>
+            </node>
+            <node id="12" posx="422.7890625" posy="771.55078125" width="128" height="65" side="bottom" fold="false" treesize="128" color="#f37329" colorroot="false" summarized="false" layout="Downwards" group="false">
+              <style branchmargin="149" branchradius="25" linktype="rounded" linkwidth="2" linkarrow="true" linkdash="solid" nodeborder="rounded" nodewidth="500" nodeborderwidth="2" nodefill="true" nodemargin="12" nodepadding="12" nodefont="Ubuntu Mono 11" nodemarkup="true"/>
+              <nodename maxwidth="500">
+                <text data="SearchTask"/>
+              </nodename>
+              <nodenote></nodenote>
+            </node>
+            <node id="11" posx="550.7890625" posy="771.55078125" width="112" height="65" side="bottom" fold="false" treesize="112" color="#f37329" colorroot="false" summarized="false" layout="Downwards" group="false">
+              <style branchmargin="149" branchradius="25" linktype="rounded" linkwidth="2" linkarrow="true" linkdash="solid" nodeborder="rounded" nodewidth="500" nodeborderwidth="2" nodefill="true" nodemargin="12" nodepadding="12" nodefont="Ubuntu Mono 11" nodemarkup="true"/>
+              <nodename maxwidth="500">
+                <text data="TaskTile"/>
+              </nodename>
+              <nodenote></nodenote>
+            </node>
+          </nodes>
+        </node>
+        <node id="7" posx="662.7890625" posy="557.55078125" width="112" height="65" side="bottom" fold="false" treesize="112" color="#3689e6" colorroot="false" summarized="false" layout="Downwards" group="false">
+          <style branchmargin="149" branchradius="25" linktype="rounded" linkwidth="2" linkarrow="true" linkdash="solid" nodeborder="rounded" nodewidth="500" nodeborderwidth="2" nodefill="true" nodemargin="12" nodepadding="12" nodefont="Ubuntu Mono 11" nodemarkup="true"/>
+          <nodename maxwidth="500">
+            <text data="ViewTask"/>
+          </nodename>
+          <nodenote></nodenote>
+        </node>
+        <node id="6" posx="774.7890625" posy="557.55078125" width="112" height="65" side="bottom" fold="false" treesize="112" color="#68b723" colorroot="false" summarized="false" layout="Downwards" group="false">
+          <style branchmargin="149" branchradius="25" linktype="rounded" linkwidth="2" linkarrow="true" linkdash="solid" nodeborder="rounded" nodewidth="500" nodeborderwidth="2" nodefill="true" nodemargin="12" nodepadding="12" nodefont="Ubuntu Mono 11" nodemarkup="true"/>
+          <nodename maxwidth="500">
+            <text data="EditTask"/>
+          </nodename>
+          <nodenote></nodenote>
+        </node>
+        <node id="3" posx="886.7890625" posy="557.55078125" width="96" height="65" side="bottom" fold="false" treesize="96" color="#c6262e" colorroot="false" summarized="false" layout="Downwards" group="false">
+          <style branchmargin="149" branchradius="25" linktype="rounded" linkwidth="2" linkarrow="true" linkdash="solid" nodeborder="rounded" nodewidth="500" nodeborderwidth="2" nodefill="true" nodemargin="12" nodepadding="12" nodefont="Ubuntu Mono 11" nodemarkup="true"/>
+          <nodename maxwidth="500">
+            <text data="NoTask"/>
+          </nodename>
+          <nodenote></nodenote>
+        </node>
+        <node id="5" posx="982.7890625" posy="557.55078125" width="128" height="65" side="bottom" fold="false" treesize="128" color="#f9c440" colorroot="false" summarized="false" layout="Downwards" group="false">
+          <style branchmargin="149" branchradius="25" linktype="rounded" linkwidth="2" linkarrow="true" linkdash="solid" nodeborder="rounded" nodewidth="500" nodeborderwidth="2" nodefill="true" nodemargin="12" nodepadding="12" nodefont="Ubuntu Mono 11" nodemarkup="true"/>
+          <nodename maxwidth="500">
+            <text data="CreateTask"/>
+          </nodename>
+          <nodenote></nodenote>
+        </node>
+      </nodes>
+    </node>
+  </nodes>
+  <groups/>
+  <stickers/>
+  <nodelinks id="0"/>
+</minder>

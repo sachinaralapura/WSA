@@ -3,7 +3,7 @@ import React, { useCallback, useEffect, useState } from "react";
 import CheckBox from "../components/ui/CheckBox";
 import { listView, board } from "../assets/asset";
 import { fetchTaskAPI, getLabelsApi } from "../utils/taskapi";
-
+import DropdownSortBy from "./ui/DropdownSortBy";
 const statusOption = [
   {
     display: "Open",
@@ -19,16 +19,21 @@ const statusOption = [
   },
 ];
 
+const sortOptions = [
+  { label: "Date Added", value: "added_on" },
+  { label: "Due Date", value: "due_date" },
+];
+
 export default function TaskListSideBar({ boardView, setBoardView, setTasks }) {
   const [labels, setLabels] = useState([]);
   const [selectedStatus, setSelectedStatus] = useState([]);
   const [selectedLabels, setSelectedLabels] = useState([]);
-  const [sortOption, setSortOption] = useState([]);
+  const [sortOption, setSortOption] = useState("");
 
   // fetch All labels
   useEffect(() => {
     const handleResponse = (responseData) => {
-      setLabels(responseData.labels);
+      setLabels(responseData.data);
     };
 
     const handleError = (errMsg) => {
@@ -108,11 +113,6 @@ export default function TaskListSideBar({ boardView, setBoardView, setTasks }) {
     setBoardView(false);
   }, [setBoardView]);
 
-  const sortOptions = [
-    { label: "Date Added", value: "added_on" },
-    { label: "Due Date", value: "due_date" },
-  ];
-
   return (
     <aside className="task-list-left-section">
       <div>
@@ -157,18 +157,18 @@ export default function TaskListSideBar({ boardView, setBoardView, setTasks }) {
       <div className="task-sidebar-child-section">
         <p className="left-section">Sort By</p>
         {/* Dropdown for sorting option */}
-        {/* <DropdownSortBy
-          placeholder="Select"
-          value={sortOptions}
+        <DropdownSortBy
+          value={sortOption}
           onChange={setSortOption}
-          options={options}
-        /> */}
+          placeholder="Select"
+          options={sortOptions}
+        />
       </div>
-      
+
       {/* label section */}
       <div className="task-sidebar-child-section">
         <p className="left-section-label">Label</p>
-        {!labels.length && (
+        {!labels?.length && (
           <span className="no-label-text">No Label created yet</span>
         )}
 

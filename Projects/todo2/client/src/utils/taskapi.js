@@ -15,7 +15,7 @@ async function fetchTaskAPI(handleResponse, handleError, options = {}) {
       url.searchParams.append("sort_by", options.sortOption);
       url.searchParams.append("sort_type", "asc");
     }
-    
+
 
     // Append  selected status as query parameters is provided
     if (options.selectedStatus?.length) {
@@ -31,7 +31,7 @@ async function fetchTaskAPI(handleResponse, handleError, options = {}) {
     }
 
     //send a GET request to the constructed URL
-    const response = await fetch(url);
+    const response = await fetch(url, { method: "GET", credentials: "include" });
 
     //extract json from the response
     const jsonData = await response.json();
@@ -43,7 +43,6 @@ async function fetchTaskAPI(handleResponse, handleError, options = {}) {
       //Throw this error in catch block
       throw new Error(errorMessage);
     }
-    console.log(jsonData)
     //pass the fetched data to the handle Response function for further processing
     handleResponse(jsonData);
   } catch (error) {
@@ -128,6 +127,7 @@ async function deleteTaskApi(taskId, handleResponse, handleError, setLoading) {
     const url = new URL(endPoint, BASEURL)
     const response = await fetch(url, {
       method: "DELETE",
+      credentials: "include"
     });
 
     const data = await response.json();
@@ -151,11 +151,12 @@ async function updateLabelApi(labels, taskId, handleResponse, handleError, setLo
     const endpoint = `/api/v2/tasks/${taskId}/labels`
     const url = new URL(endpoint, BASEURL)
 
-    const requestBody = JSON.stringify({labels})
+    const requestBody = JSON.stringify({ labels })
     const response = await fetch(url, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: requestBody,
+      credentials: "include"
     })
 
     const jsonData = await response.json();
@@ -177,7 +178,7 @@ async function getLabelsApi(handleResponse, handleError) {
     const endpoint = `/api/v2/tasks/labels`
     const url = new URL(endpoint, BASEURL)
 
-    const response = await fetch(url)
+    const response = await fetch(url, { method: "GET", credentials: "include" })
 
     const jsonData = await response.json();
 
@@ -203,6 +204,7 @@ async function changeStatusApi(status, taskId, handleResponse, handleError, setL
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: requestBody,
+      credentials: "include"
     })
 
     const jsonData = await response.json();
