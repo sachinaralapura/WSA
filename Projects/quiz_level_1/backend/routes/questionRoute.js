@@ -1,8 +1,11 @@
-import { Router } from "express";
-import { getQuestion } from "../controllers/questionController.js";
-const quesionRouter = Router();
+const express = require("express");
+const { checkAnswer, getQuestion } = require("../controllers/questionController.js");
+
+const quesionRouter = express.Router(); 
 
 // GET [api/v1/]
 quesionRouter.get("/", getQuestion)
 
-export default quesionRouter
+quesionRouter.post("/", checkAnswer)
+
+module.exports = quesionRouter

@@ -20,7 +20,6 @@ app.get("/", (req, res) => {
 
 app.use("/api/v2/tasks", router);
 
-
 app.listen(PORT, () => {
     connectDb();
     console.log(`Listening on PORT ${PORT}...`)

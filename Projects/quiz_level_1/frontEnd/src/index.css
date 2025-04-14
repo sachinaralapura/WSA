@@ -1,0 +1,428 @@
+/*
+The line below is importing the Baloo 2 font from the Google Fonts API.
+The `wght@400..800` part specifies the weight of the font, specifically Baloo 2, ranging from 400 (light) to 800 (extra-bold).
+The `&display=swap` part is used to provide fallback fonts in case the specified font is not available.
+*/
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap");
+
+body {
+  font-family: "Baloo 2", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
+  /* Default font properties */
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Background properties:
+   * The `background-image` property sets the background image of an element.
+   * The `background-size` property sets how the background image should be sized. Here, it is set to "cover",
+     which means that the background image should be scaled to be as large as possible so that the background
+     area is completely covered.
+   * The `background-attachment` property sets whether the background image scrolls with the element or
+     remains fixed. Here, it is set to "fixed", which means that the image will not scroll with the page.
+   * The `background-repeat` property sets whether the background image should be repeated. Here, it is set to
+     "no-repeat", which means that the image will not be repeated and will only appear once.
+   */
+  background-image: url("./assets/body-background.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  margin: 0;
+  min-height: 100vh; /* Set minimum height to viewport height */
+}
+
+/*
+Adding the `*` selector before the `box-sizing` property sets this property
+for all elements on the page. This means that the width and height of an element
+are calculated including the padding and border, rather than just the content.
+This is useful because it helps to prevent unexpected resizing of elements
+when the padding or border is changed.
+*/
+* {
+  box-sizing: border-box;
+}
+
+/* Global styles */
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Utility Classes */
+
+.weight-400 {
+  font-weight: 400;
+}
+.weight-500 {
+  font-weight: 500;
+}
+.weight-600 {
+  font-weight: 600;
+}
+.weight-700 {
+  font-weight: 700;
+}
+.weight-800 {
+  font-weight: 800;
+}
+
+/* Common UI Components */
+
+.card-wrapper {
+  background-color: white;
+  border-radius: 1.25rem; /* 20px */
+  box-shadow: 0rem 1.25rem 3.125rem -0.625rem #00000026;
+}
+
+.btn {
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 3.75rem; /* Default padding */
+  background-color: hsl(330, 97%, 41%);
+  color: #ffffff;
+  font-family: inherit;
+}
+.btn.small {
+  width: 8.75rem; /* 140px */
+  height: 3.125rem; /* 50px */
+  padding: 0;
+  justify-content: space-evenly;
+  font-size: 1.25rem; /* 20px */
+  font-weight: 600;
+  line-height: 2rem; /* 32px */
+}
+.btn.large {
+  padding: 0;
+  width: 24.0625rem; /* 385px */
+  height: 3.75rem; /* 60px */
+  font-size: 1.5rem; /* 24px */
+  font-weight: 600;
+  line-height: 2.4rem; /* 38.4px */
+}
+.btn.loading {
+  opacity: 0.5;
+  pointer-events: none;
+}
+.btn.disabled {
+  opacity: 0.1;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+.btn.hover:hover {
+  background-color: hsl(330, 97%, 35%);
+}
+
+.progress-bar {
+  /* CSS variable for the color of the progress-track */
+  --track-bg-color: #7b2f92;
+  width: 100%;
+  height: 0.625rem; /* 10px */
+  border-radius: 0;
+
+  /* Below 2 properties are required for Firefox */
+  background-color: #ffffff80;
+  border: none;
+}
+/* Below selectors are required for Chromium based browsers */
+.progress-bar::-webkit-progress-bar {
+  background-color: #ffffff80;
+}
+.progress-bar::-webkit-progress-value {
+  background-color: var(--track-bg-color);
+  border-radius: 0 10rem 10rem 0;
+  transition: width 0.3s ease-out;
+}
+.progress-bar.final-question::-webkit-progress-value {
+  /* Remove curved edges when 100% progress is achieved to completely fill background */
+  border-radius: 0;
+}
+
+/* Below selectors are required for Firefox */
+.progress-bar::-moz-progress-bar {
+  background-color: var(--track-bg-color);
+  border-radius: 0 10rem 10rem 0;
+}
+.progress-bar.final-question::-moz-progress-bar {
+  /* Remove curved edges when 100% progress is achieved to completely fill background */
+  border-radius: 0;
+}
+
+/* Welcome Screen */
+
+.welcome-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 1.5rem; /* 24px */
+  padding: 4rem 0rem; /* 64px 0px */
+}
+@media (min-height: 900px) {
+  /* The media query is used to adjust the layout of the welcome screen when the viewport height is 900px or higher.
+   This is done to center the content vertically within the viewport when there is enough vertical space. */
+  .welcome-section {
+    height: 100vh;
+    justify-content: center;
+    padding: 0;
+  }
+}
+.welcome-card {
+  text-align: center;
+  padding: 5.25rem 3.75rem 6.25rem 3.75rem; /* 84px 60px 100px 60px */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 2.1875rem; /* 35px */
+}
+.welcome-card-content-top {
+  width: 16rem; /* 256px */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 1.25rem; /* 20px */
+}
+.welcome-card-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.25rem; /* 4px */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-weight: 600;
+  font-size: 1.125rem; /* 18px */
+  line-height: 1.8025rem; /* 28.84px */
+}
+.welcome-card-list .list-item {
+  display: flex;
+  column-gap: 0.625rem; /* 10px */
+}
+
+/* Question Screen */
+
+.question-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 1.1875rem; /* 19px */
+  padding: 0;
+  padding-top: 1.75rem; /* 28px */
+}
+.question-content {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.question-card {
+  padding: 4.75rem 3.125rem 5.25rem 4.25rem; /* 77px 61px 84px 80px */
+  margin: 5rem 0rem; /* 80px 0px */
+  position: relative;
+  width: 54.5625rem;
+  font-size: 1.25rem; /* 20px */
+  font-weight: 600;
+  line-height: 2rem; /* 32px */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media (min-height: 900px) {
+  .question-card {
+    margin: 0;
+  }
+}
+.question-number {
+  --circle-width: 5.4375rem; /* 87px */
+  position: absolute;
+  width: var(--circle-width);
+  aspect-ratio: 1;
+  left: calc(50% - var(--circle-width) / 2);
+  top: calc(var(--circle-width) / -2);
+  background-color: #01b7a9;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 1.625rem; /* 26px */
+  font-weight: 700;
+  line-height: 2.625rem; /* 42px */
+}
+.question-text {
+  margin-top: 0rem;
+  margin-bottom: 2rem; /* 32px */
+}
+.question-options {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem; /* 16px */
+  margin-bottom: 4.0625rem; /* 65px */
+}
+.question-options .option {
+  --left-padding: 1.875rem; /* 30px */
+  --answer-border-width: 0.625rem; /* 10px */
+  background-color: transparent;
+  font-size: inherit;
+  line-height: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  color: inherit;
+  text-align: left;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 0.0625rem solid #0000004d;
+  padding: 0.5rem 1rem 0.5rem var(--left-padding); /* 8px 16px 8px 30px */
+}
+.question-options .not-answered {
+  cursor: pointer;
+}
+.question-options .not-answered:active {
+  background-color: hsla(0, 0%, 0%, 0.1);
+}
+.question-options .option.loading {
+  color: hsla(0, 0%, 0%, 0.5);
+}
+.question-options .correct-answer {
+  border: 0.0625rem solid transparent;
+  border-left: var(--answer-border-width) solid #127029;
+  background-color: #cce9d3;
+  padding-left: calc(
+    var(--left-padding) - var(--answer-border-width) + 0.0625rem
+  );
+}
+.question-options .incorrect-answer {
+  border: 0.0625rem solid transparent;
+  border-left: var(--answer-border-width) solid #ff4141;
+  background-color: #f8d7da;
+  padding-left: calc(
+    var(--left-padding) - var(--answer-border-width) + 0.0625rem
+  );
+}
+.unattempted-radio,
+.correct-radio,
+.incorrect-radio {
+  aspect-ratio: 1;
+}
+.unattempted-radio {
+  display: inline-block;
+  width: 1.25rem; /* 20px */
+  height: 1.25rem; /* 20px */
+  border-radius: 50%;
+  background-color: transparent;
+  border: 0.0625rem solid #0000004d;
+}
+.question-options .not-answered:hover,
+.question-options .not-answered:focus {
+  .unattempted-radio {
+    border-color: hsla(0, 0%, 0%, 0.6);
+  }
+}
+.correct-radio,
+.incorrect-radio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.25rem; /* 20px */
+  height: 1.25rem; /* 20px */
+  border-radius: 50%;
+}
+.correct-radio {
+  background-color: #4bae4f;
+}
+.incorrect-radio {
+  background-color: #ff4141;
+}
+
+/* Result Screen */
+
+.result-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 4.625rem; /* 74px */
+  padding: 4rem 0rem; /* 64px 0px */
+}
+@media (min-height: 900px) {
+  .result-section {
+    height: 100vh;
+    justify-content: center;
+    padding: 0;
+  }
+}
+.result-card {
+  max-width: 65%;
+  position: relative;
+  text-align: center;
+  padding: 6.25rem; /* 100px */
+  padding-bottom: 5.6875rem; /* 91px */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.result-icon-wrapper {
+  --circle-width: 6.25rem; /* 100px */
+  position: absolute;
+  width: var(--circle-width);
+  aspect-ratio: 1;
+  left: calc(50% - var(--circle-width) / 2);
+  top: calc(var(--circle-width) / -2);
+  background-color: #01b7a9;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.result-text {
+  font-size: 2.5rem; /* 40px */
+  font-weight: 400;
+  line-height: 4rem; /* 64px */
+  text-align: center;
+  margin-bottom: 1rem; /* 16px */
+}
+.result-details {
+  width: 26.875rem; /* 430px */
+  height: 9.125rem; /* 146px */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 0.5rem; /* 8px */
+  border-radius: 1rem; /* 16px */
+  background-color: #01b7a9;
+  color: white;
+  margin-bottom: 2rem; /* 32px */
+}
+.correct-answers {
+  font-size: 6.25rem; /* 100px */
+  font-weight: 700;
+  line-height: 10rem; /* 160px */
+  text-align: left;
+}
+.total-questions {
+  margin: 0;
+  font-size: 2.25rem; /* 36px */
+  font-weight: 400;
+  line-height: 2.4rem; /* 38.4px */
+  text-align: left;
+}

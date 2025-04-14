@@ -1,5 +1,5 @@
-import "dotenv/config"
-import mongoose from "mongoose"
+require("dotenv/config");
+const mongoose = require("mongoose")
 
 const db = () => {
     mongoose.connect(process.env.DATABASE_URI).then(() => {
@@ -8,4 +8,4 @@ const db = () => {
         console.log("Error Connecting to database");
     })
 }
-export default db;
+module.exports = db;
