@@ -1,5 +1,4 @@
-import { GoogleLogin } from "@react-oauth/google";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "../styles/authenticate.css";
 
 import { FaEnvelope, FaLock, FaArrowRight } from "react-icons/fa";

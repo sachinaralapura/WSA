@@ -19,3 +19,5 @@ keys
 node_modules
 node-modules
 *.txt
+pp.js
+bin

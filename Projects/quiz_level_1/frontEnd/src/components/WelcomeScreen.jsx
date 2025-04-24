@@ -1,27 +1,26 @@
-import React, { useState } from "react";
-import { Button, Card, QuizLogo } from "./ui";
+import React, { useCallback, useState } from "react";
 import { CheckGreen, QuestionBubble } from "../assets";
 import { useScreen } from "../context/screen";
-
+import { Button, Card, QuizLogo } from "./ui";
+import { useQuestion } from "../context/QuestionContext";
+import { fetchQuestionsApi } from "../utils/api";
+import handleError from "../utils/handleError";
 export default function WelcomeScreen() {
   const [loading, setLoading] = useState(false);
   const { showQuestionScreen } = useScreen();
-  const beginQuiz = async () => {
-    setLoading(true);
-    try {
-      const response = await fetch("http://localhost:8000/api/v1/question", {
-        method: "GET",
-      });
-      const data = await response.json();
-      if (!response.ok) throw new Error("error fetching questions");
-      console.log(data);
+  const { processQuestion } = useQuestion();
+
+  const handleResponse = useCallback(
+    (responseData) => {
+      processQuestion(responseData);
       showQuestionScreen();
-    } catch (err) {
-      console.error(err);
-    } finally {
-      setLoading(false);
-    }
-  };
+    },
+    [processQuestion, showQuestionScreen]
+  );
+
+  const startQuiz = useCallback(() => {
+    fetchQuestionsApi(handleResponse, handleError, setLoading);
+  }, [handleError, handleResponse]);
 
   return (
     <section className="welcome-section">
@@ -45,7 +44,7 @@ export default function WelcomeScreen() {
 
         <Button
           size="large"
-          onClick={beginQuiz}
+          onClick={startQuiz}
           loadingText="Starting the quiz"
           loading={loading}
         >

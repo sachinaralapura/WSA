@@ -1,15 +1,17 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { Button, Card, QuizLogo, RestartFc } from "./ui";
 import { Tropy } from "../assets";
 import { useScreen } from "../context/screen";
-
+import handleError from "../utils/handleError";
+import { useQuestion } from "../context/QuestionContext";
+import { fetchQuestionsApi } from "../utils/api";
 export default function ResultScreen() {
   const [loading, setLoading] = useState(false);
-  const { showWelcomeScreen } = useScreen();
+  const { showQuestionScreen } = useScreen();
+  const { numberOfcorrectAnswers, totalquestion, processQuestion } =
+    useQuestion();
 
-  const totalQuestion = 10;
-  const correctAnswer = 7;
-  let percent = (correctAnswer / totalQuestion) * 100;
+  let percent = (numberOfcorrectAnswers / totalquestion) * 100;
   let feedBackText = "YOU COULD DO BETTER";
 
   if (percent >= 90) {
@@ -19,6 +21,18 @@ export default function ResultScreen() {
   } else if (percent >= 50) {
     feedBackText = "YOU DID OK!";
   }
+
+  const handleResponse = useCallback(
+    (responseData) => {
+      processQuestion(responseData);
+      showQuestionScreen();
+    },
+    [processQuestion, showQuestionScreen]
+  );
+
+  const restartQuiz = useCallback(() => {
+    fetchQuestionsApi(handleResponse, handleError, setLoading);
+  }, [handleError, handleResponse]);
 
   return (
     <div>
@@ -30,19 +44,16 @@ export default function ResultScreen() {
           </div>
           <h1 className="result-text">{feedBackText}</h1>
           <div className="result-details">
-            <span className="correct-answers">{correctAnswer}</span>
+            <span className="correct-answers">{numberOfcorrectAnswers}</span>
             <p className="total-questions">
               Questions
               <br />
-              out of <span className="weight-700">{totalQuestion}</span>
+              out of <span className="weight-700">{totalquestion}</span>
             </p>
           </div>
           <Button
             size={"large"}
-            onClick={() => {
-              setLoading(true);
-              showWelcomeScreen();
-            }}
+            onClick={restartQuiz}
             loading={loading}
             loadingText="Restarting..."
             icon={<RestartFc />}

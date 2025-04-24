@@ -1,9 +1,8 @@
-import { useCallback, useState } from "react";
-import WelcomeScreen from "./components/WelcomeScreen";
-import "./index.css";
 import QuestionScreen from "./components/QuestionScreen";
 import ResultScreen from "./components/ResultScreen";
+import WelcomeScreen from "./components/WelcomeScreen";
 import { useScreen } from "./context/screen";
+import "./index.css";
 
 const WELCOME_SCREEN = "welcome";
 const QUESTION_SCREEN = "question";

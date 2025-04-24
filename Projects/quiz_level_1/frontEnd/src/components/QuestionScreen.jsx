@@ -1,29 +1,62 @@
 import clsx from "clsx";
-import React, { useMemo, useState } from "react";
+import React, { act, useCallback, useMemo, useState } from "react";
 import { Button, Card, NextArrowIcon, ProgressBar, QuizLogo } from "./ui";
 import { Correct, Incorrect } from "../assets";
+import { useQuestion } from "../context/QuestionContext";
+import { validateAnswerApi } from "../utils/api";
+import handleError from "../utils/handleError";
+import { useScreen } from "../context/screen";
 
 function QuestionScreen() {
   const [userSelected, setUserSelected] = useState("");
+  const {
+    activeQuestion,
+    activeQuestionNumber,
+    totalquestion,
+    activeNextQuestion,
+    updateQuestionState,
+  } = useQuestion();
 
-  const activeQuestion = {
-    _id: "question Id",
-    question: "What is Capital of Karnataka",
-    options: [
-      { id: 1, value: "Bengaluru" },
-      { id: 2, value: "Delhi" },
-      { id: 3, value: "Mumbai" },
-      { id: 4, value: "Kolkata" },
-    ],
-    answerId: 1,
-  };
+  const { showResultScreen } = useScreen();
+  const [loading, setLoading] = useState(false);
 
   // If user selected any option
   const hastAttempted = Boolean(userSelected);
 
-  const isAnswerCorrect = useMemo(() => {
-    return Boolean(activeQuestion.answerId === userSelected);
-  }, [userSelected]);
+  const handleResponse = useCallback(
+    (responseData) => {
+      const isCorrectAnswer = responseData.status;
+      if (isCorrectAnswer) {
+        updateQuestionState(isCorrectAnswer);
+      }
+    },
+    [updateQuestionState]
+  );
+
+  const handleOptionClick = useCallback((selectedOption) => {
+    setUserSelected(selectedOption.id);
+    // validate the answer
+    validateAnswerApi(
+      activeQuestion._id,
+      selectedOption,
+      handleResponse,
+      handleError,
+      setLoading
+    );
+  });
+
+  const handleNext = useCallback(() => {
+    if (finalQuestion) {
+      showResultScreen();
+    }
+    setUserSelected("");
+    activeNextQuestion();
+  });
+
+  const finalQuestion = useMemo(
+    () => activeQuestionNumber === totalquestion,
+    [activeQuestionNumber]
+  );
 
   return (
     <section className="question-section">
@@ -31,25 +64,27 @@ function QuestionScreen() {
       <ProgressBar />
       <div className="question-content">
         <Card className="question-card">
-          <div className="question-number">1/5</div>
-          <p className="question-text">{activeQuestion.question}</p>
+          <div className="question-number">{`${activeQuestionNumber} / ${totalquestion}`}</div>
+          <p className="question-text">{activeQuestion?.question}</p>
           <div className="question-options">
             {activeQuestion.options.map((option) => {
               const isSelected = option.id === userSelected;
-              const isOptionCorrect = isSelected && isAnswerCorrect;
-              const isOptionInCorrect = isSelected && !isAnswerCorrect;
-
+              const isOptionCorrect =
+                isSelected && activeQuestion.isAnswerCorrect;
+              const isOptionInCorrect =
+                isSelected && !activeQuestion.isAnswerCorrect;
+              const isLoading = isSelected && loading;
               return (
                 <button
                   className={clsx(
                     "option",
                     !hastAttempted && "not-answered",
-                    isSelected && "selected",
+                    isLoading && "loading",
                     isOptionCorrect && "correct-answer",
                     isOptionInCorrect && "incorrect-answer"
                   )}
-                  key={option.id}
-                  onClick={() => setUserSelected(option.id)}
+                  key={`${activeQuestion._id}-${option.id}`}
+                  onClick={() => handleOptionClick(option)}
                   disabled={hastAttempted}
                 >
                   {option.value}
@@ -73,12 +108,13 @@ function QuestionScreen() {
             })}
           </div>
           <Button
+            onClick={handleNext}
             disabled={!hastAttempted}
             icon={<NextArrowIcon />}
             iconPosition="right"
             size="small"
           >
-            Next
+            {finalQuestion ? "Submit" : "Next"}
           </Button>
         </Card>
       </div>

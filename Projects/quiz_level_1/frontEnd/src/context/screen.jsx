@@ -1,5 +1,11 @@
 import React, { useState, useCallback, useContext } from "react";
-const ScreenContext = React.createContext({});
+const ScreenContext = React.createContext({
+  viewScreen: "",
+  setViewScreen: () => {},
+  showQuestionScreen: () => {},
+  showResultScreen: () => {},
+  showWelcomeScreen: () => {},
+});
 
 export const useScreen = () => {
   const context = useContext(ScreenContext);
@@ -11,7 +17,7 @@ export const ScreenProvider = ({ children }) => {
   const QUESTION_SCREEN = "question";
   const RESULT_SCREEN = "result";
 
-  const [viewScreen, setViewScreen] = useState(RESULT_SCREEN);
+  const [viewScreen, setViewScreen] = useState(WELCOME_SCREEN);
 
   const showQuestionScreen = useCallback(() => {
     setViewScreen(QUESTION_SCREEN);
