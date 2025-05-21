@@ -1,4 +1,4 @@
-package src.Arrays;
+package Arrays;
 
 public class PrintArray {
     public static <T> void printArray(T[] array) {

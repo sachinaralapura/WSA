@@ -1,4 +1,4 @@
-package src.sorting;
+package sorting;
 
 public abstract class Sort {
     abstract <T extends Comparable<T>> void sort(T[] array);

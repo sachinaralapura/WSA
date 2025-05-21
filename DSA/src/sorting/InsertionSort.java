@@ -1,4 +1,7 @@
-package src.sorting;
+// //insertion sort
+// O(n²)	Every new element may need to be compared with all previous ones.
+
+package sorting;
 
 public class InsertionSort extends Sort {
 

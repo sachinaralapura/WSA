@@ -1,5 +1,5 @@
-import MainLayout from "../components/MainLayout"
-import TaskMain from "../components/TaskMain"
+import MainLayout from "../components/MainLayout";
+import TaskMain from "../components/TaskMain";
 function MainPage() {
     return (
         <>
@@ -7,7 +7,7 @@ function MainPage() {
                 <TaskMain></TaskMain>
             </MainLayout>
         </>
-    )
+    );
 }
 
-export default MainPage
+export default MainPage;

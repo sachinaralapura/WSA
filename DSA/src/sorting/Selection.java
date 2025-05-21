@@ -1,4 +1,4 @@
-package src.sorting;
+package sorting;
 
 public class Selection extends Sort {
 

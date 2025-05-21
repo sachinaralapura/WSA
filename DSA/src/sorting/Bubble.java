@@ -1,4 +1,8 @@
-package src.sorting;
+// sorting
+//bubble sort
+// O(n²)	Two nested loops result in n × n comparisons in worst case.
+
+package sorting;
 
 public class Bubble extends Sort {
     public <T extends Comparable<T>> void sort(T[] array) {
